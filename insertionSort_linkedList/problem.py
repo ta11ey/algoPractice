@@ -2,7 +2,7 @@ from typing import List
 from dataset import dataset1, dataset2
 
 class ListNode:
-    def __init__(self, val=0, next=None):
+    def __init__(self, val=None, next=None):
         self.val = val
         self.next = next
 
@@ -24,25 +24,27 @@ linkedList1 = makeLinkedList(dataset1)
 linkedList2 = makeLinkedList(dataset2)
 
 def dummyInsert(head: ListNode, item: ListNode):
-    dummy = ListNode(0, head)
-    newInsert = ListNode(item.val)
+    dummy = ListNode()
     current = dummy
+    current.next = head
 
     while current.next and current.next.val < item.val:
         current = current.next
 
-    newInsert.next = current.next
+    item = ListNode(item.val, current.next)
     current.next = item
 
     return dummy.next
 
 
 def insertionSort(head):
+#   sorted part
     sortedHead = ListNode(head.val, None)
+#   Current
     current = head
-
+#   Unsorted
     while current.next is not None:
-        sortedHead = dummyInsert(sortedHead, current)
+        sortedHead = dummyInsert(sortedHead, current.next)
         current = current.next
 
     return sortedHead
