@@ -1,8 +1,8 @@
 from flask import Flask
-from algos import sorted
+from . import algos
 app = Flask(__name__)
 
 @app.route("/")
 def hello_friend():
-    return sorted().val
+    return f'{algos.sorted().val} test'
 

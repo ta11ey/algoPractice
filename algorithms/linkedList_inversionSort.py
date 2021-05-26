@@ -7,7 +7,8 @@
 # It repeats until no input elements remain.
 # The following is a graphical example of the insertion sort algorithm. The partially sorted list (black) initially contains only the first element in the list. One element (red) is removed from the input data and inserted in-place into the sorted list with each iteration.
 
-from dataStructures.ListNode import ListNode
+from algoPractice.dataStructures.ListNode import ListNode
+
 def dummyInsert(head: ListNode, item: ListNode):
     dummy = ListNode()
     current = dummy
