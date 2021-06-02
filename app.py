@@ -3,6 +3,6 @@ from . import algos
 app = Flask(__name__)
 
 @app.route("/")
-def hello_friend():
-    return f'{algos.sorted().val} test'
+def sortLinkedListBy_insertionSort():
+    return f'{algos.insertionSort()}'
 
